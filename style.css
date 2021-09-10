@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Teko&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Teko", sans-serif;
+}
+#book {
+  position: relative;
+  width: 300px;
+  height: 500px;
+  transform-style: preserve-3d;
+  transform: rotateX(-30deg) rotateY(300deg);
+  animation: animate 10s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: rotateX(-20deg) rotateY(360deg);
+  }
+  100% {
+    transform: rotateX(-20deg) rotateY(0deg);
+  }
+}
+#book:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 150px;
+  background-color: rgb(58, 58, 58);
+  transform: rotateX(90deg) translateY(75px) translateZ(-500px);
+  filter: blur(50px);
+}
+#book div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+#book div span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#book div span:nth-child(1) {
+  transform: rotateY(0) translate3d(0, 0, 150px);
+  background-color: rgb(122, 90, 90);
+}
+#book div span:nth-child(1):before {
+  content: "How to become a web developer?";
+  font-size: 2rem;
+  position: absolute;
+  width: 90%;
+  height: 60%;
+  background: url("https://media.giphy.com/media/L8K62iTDkzGX6/giphy.gif?cid=ecf05e4777zairvc9cvmyftb54iszrkh43p2ar663j6kf0nj&rid=giphy.gif&ct=g")
+    center 6rem no-repeat;
+  background-size: 90%;
+}
+
+#book div span:nth-child(2) {
+  transform: rotateY(90deg) translate3d(0, 0, 150px) translateX(-50%);
+  background-image: url("lines.jpg");
+  background-size: cover;
+  width: 150px;
+  position: absolute;
+  top: 0;
+  left: 75px;
+}
+
+#book div span:nth-child(3) {
+  transform: rotateY(180deg) translate3d(0, 0, 0);
+  background-color: rgb(122, 90, 90);
+}
+#book div span:nth-child(3):before {
+  content: "Build By Yifang Di";
+  font-size: 1.3em;
+}
+
+#book div span:nth-child(4) {
+  transform: rotateY(270deg) translate3d(0, 0, 150px) translateX(50%);
+  background-color: rgb(104, 76, 76);
+  width: 150px;
+  position: absolute;
+  top: 0;
+  left: 75px;
+}
+#book div span:nth-child(4):before {
+  content: "Meet your Success Here";
+  font-size: 1.3em;
+  transform: rotate(-90deg);
+}
+#book .top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 150px;
+  background-image: url("lines1.jpg");
+  background-size: cover;
+  transform: rotateX(90deg) translate3d(0, 0, 75px) translateY(75px);
+}
